@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const TableRow = ({ item }) => {
+  const navigate = useNavigate()
   const { name, email, gender, status, _id } = item;
 
   const handleDeletedUser = async (id) => {
@@ -12,6 +14,9 @@ const TableRow = ({ item }) => {
       console.log(err.message);
     }
   };
+
+
+
   return (
     <tr>
       <td>1</td>
@@ -26,7 +31,7 @@ const TableRow = ({ item }) => {
         >
           DELETE
         </button>
-        <button className="btn btn-success mx-3">EDIT</button>
+        <button onClick={()=> navigate('/updateUser/'+_id)}  className="btn btn-success mx-3">EDIT</button>
       </td>
     </tr>
   );

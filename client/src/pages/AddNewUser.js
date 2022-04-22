@@ -32,6 +32,7 @@ const AddNewUser = () => {
 
   return (
     <div className="addNewUser">
+      <h2 className="text-center mb-4">ADD NEW USER </h2>
       <Form onSubmit={handleAddUser}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>

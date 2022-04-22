@@ -4,7 +4,7 @@ const userController = require('../controller/userController')
 
 userRoutes.get('/api/user',userController.find)
 userRoutes.post('/api/user',userController.post)
-userRoutes.put('/api/user',userController.put)
+userRoutes.put('/api/user/:id',userController.put)
 userRoutes.delete('/api/user/:id',userController.delete)
 
 

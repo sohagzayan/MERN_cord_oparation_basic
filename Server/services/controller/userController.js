@@ -32,6 +32,13 @@ exports.delete = async(req, res) => {
 
 
 
-exports.put = (req, res) => {
-  res.send("this is put method");
+exports.put = async(req, res) => {
+  try{
+    const updateUser = await User.updateOne({_id : req.params.id},{
+       $set : req.body
+     })
+     res.send(updateUser)
+  }catch(err){
+    res.send({err : err.message})
+  }
 };

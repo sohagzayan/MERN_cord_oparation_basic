@@ -13,6 +13,7 @@ const RoutesAll = () => {
         <Route path="/" element={<UserView />} />
         <Route path="/addUser" element={<AddNewUser />} />
         <Route path="/editUser" element={<EditUser />} />
+        <Route path="/updateUser/:id" element={<EditUser />} />
       </Routes>
     </>
   );
