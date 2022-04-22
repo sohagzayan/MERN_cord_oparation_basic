@@ -18,13 +18,13 @@ const AddNewUser = () => {
             We'll never share your email with anyone else.
           </Form.Text>
         </Form.Group>
-        <label className="me-3" For="card">Choose Gender</label>
+        <label className="me-3" >Choose Gender</label>
         <select  className="me-3" name="" id="">
             <option value="gender">Gender</option>
             <option value="gender">Male</option>
             <option value="gender">Female</option>
         </select>
-        <label className="me-3" For="card">Status</label>
+        <label className="me-3" >Status</label>
         <select className="" name="" id="">
             <option value="gender">Active</option>
             <option value="gender">UnActive</option>

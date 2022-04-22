@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import TableRow from "../components/TableRow";
+
+
+
 const CORD = () => {
+  const [data , setData] = useState([])
+  useEffect(()=>{
+    fetch('http://localhost:5000/api/user')
+    .then(res => res.json())
+    .then(data => setData(data))
+  },[data])
+
+
+
   return (
     <div className="table_wrapper">
       <Table striped bordered hover variant="dark">
@@ -15,18 +28,7 @@ const CORD = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Najmul Hossain</td>
-            <td>najmul@gmail.com</td>
-            <td>Female</td>
-            <td>active</td>
-            <td>
-              <button className="btn btn-danger mx-3">DELETE</button>
-              <button className="btn btn-success mx-3">EDIT</button>
-            </td>
-          </tr>
-      
+         {data.map(item => <TableRow key={item._id} item={item} /> )}
         </tbody>
       </Table>
     </div>
